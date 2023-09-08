@@ -11,11 +11,13 @@ app.get('/api', (req, res) => {
 
   const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
   const currentDate = new Date();
-  const currentDay = daysOfWeek[currentDate.getUTCDay()];
+  const currentDay = daysOfWeek[currentDate.getUTCDay()]; 
 
 
   const currentUTCDate = new Date();
-  const currentUTCTime = currentUTCDate.toISOString();
+  currentUTCDate.setMinutes(currentUTCDate.getMinutes() + Math.floor(Math.random() * 5) - 2); // Simulate +/-2 minutes
+  const currentUTCTime = currentUTCDate.toISOString().replace(/:\d+\.\d+Z$/, "Z"); // Format as "2023-09-08T03:23:42Z"
+
 
 
   const githubFileURL = "https://github.com/Alexander-OE/Task1/blob/main/app.js";
