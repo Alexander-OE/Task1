@@ -18,8 +18,8 @@ app.get('/api', (req, res) => {
   const currentUTCTime = currentUTCDate.toISOString();
 
   // Step 6: Define GitHub URLs for file and repository
-  const githubFileURL = "https://github.com/username/repo/blob/main/file_name.ext";
-  const githubRepoURL = "https://github.com/username/repo";
+  const githubFileURL = "https://github.com/Alexander-OE/Task1/blob/main/app.js";
+  const githubRepoURL = "https://github.com/Alexander-OE/Task1";
 
   // Step 7: Create the JSON response object
   const jsonResponse = {
@@ -37,7 +37,7 @@ app.get('/api', (req, res) => {
 });
 
 // Step 9: Start the Express server and listen on a specified port
-const port = process.env.PORT || 4000; // Use the environment variable PORT or default to 3000
+const port = process.env.PORT || 3000; // Use the environment variable PORT or default to 3000
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
