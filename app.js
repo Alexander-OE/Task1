@@ -15,7 +15,7 @@ app.get('/api', (req, res) => {
 
   // Step 5: Get the current UTC time within a +/-2 minute window
   const currentUTCDate = new Date();
-  const currentUTCTime = currentUTCDate.toISOString().replace(/:\d+\.\d+Z$/, "Z");
+  const formattedCurrentUTCTime = currentUTCDate.toISOString().slice(0, -5) + "Z";
 
   // Step 6: Define GitHub URLs for file and repository
   const githubFileURL = "https://github.com/Alexander-OE/Task1/blob/main/app.js";
@@ -25,7 +25,7 @@ app.get('/api', (req, res) => {
   const jsonResponse = {
     slack_name: slackName,
     current_day: currentDay,
-    utc_time: currentUTCTime,
+    utc_time: formattedCurrentUTCTime,
     track: track,
     github_file_url: githubFileURL,
     github_repo_url: githubRepoURL,
